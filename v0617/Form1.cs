@@ -22,6 +22,13 @@ namespace v0617
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Point spos = MousePosition;
+            Point fpos = PointToClient(spos);
+            label4.Left = spos.X;
+            label4.Top = spos.Y;
+
+            label4.Text = $"{fpos.X},{fpos.Y}";
+
             label1.Left += vx;
             label1.Top += vy;
 
@@ -39,6 +46,8 @@ namespace v0617
 
             if (score <= 0)
             {
+                label3.Top = ClientSize.Height / 2;
+                label3.Left = ClientSize.Width / 2;
                 label3.Visible = true;
                 timer1.Enabled = false;
             }
