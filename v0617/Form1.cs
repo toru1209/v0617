@@ -52,6 +52,14 @@ namespace v0617
                 timer1.Enabled = false;
             }
 
+            if (   (fpos.Y >= label1.Top) 
+                && (fpos.Y < label1.Bottom) 
+                && (fpos.X <= label1.Left)
+                && (fpos.X > label1.Right)
+                )
+            {
+                timer1.Enabled = false;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
