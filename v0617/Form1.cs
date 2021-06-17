@@ -40,13 +40,6 @@ namespace v0617
             label1.Left += vx;
             label1.Top += vy;
 
-            if (    (fpos.Y >= label1.Top)
-                 && (fpos.Y < label1.Bottom)
-                 && (fpos.X <= label1.Left)
-                 && (fpos.X > label1.Right)
-                )
-                timer1.Enabled = false;
-
             if (label1.Left < 0)
                 vx = vx * -1;
             if (label1.Top < 0)
@@ -67,7 +60,13 @@ namespace v0617
                 timer1.Enabled = false;
             }
 
-
+            if (    (fpos.Y >= label1.Top)
+                 && (fpos.Y < label1.Bottom)
+                 && (fpos.X <= label1.Left) 
+                 && (fpos.X > label1.Right)
+                )
+                timer1.Enabled = false;
+            
             label5.Left += vx1;
             label5.Top += vy1;
 
