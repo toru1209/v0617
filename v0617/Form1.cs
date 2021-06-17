@@ -36,6 +36,13 @@ namespace v0617
 
             score -= 1;
             label2.Text = "score " + score;
+
+            if (score <= 0)
+            {
+                label3.Visible = true;
+                timer1.Enabled = false;
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
